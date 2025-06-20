@@ -1,0 +1,9 @@
+Package: ice-kernel-dkms
+Version: 1.17.4
+Architecture: all
+Section: mlit/kernel
+Priority: optional
+Maintainer: "University of Michigan Library IT" <lit-noreply@umich.edu>
+Depends: dkms
+Description: Intel Ethernet 800 Series driver
+

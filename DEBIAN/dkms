@@ -1,0 +1,7 @@
+PACKAGE_NAME="ice"
+PACKAGE_VERSION="1.17.4"  # Update to match!
+BUILT_MODULE_NAME[0]="ice"
+BUILT_MODULE_LOCATION[0]="src/"
+DEST_MODULE_LOCATION[0]="/kernel/drivers/net/ethernet/intel/ice/"
+AUTOINSTALL="yes"
+MAKE[0]="cd src; make -j"
