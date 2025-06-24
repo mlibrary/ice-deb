@@ -1,4 +1,6 @@
 *.tar.gz
 *.deb
 ice_*
-
+debian/ice-kernel-*
+debian/*debhelper*
+src/

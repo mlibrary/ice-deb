@@ -1,4 +1,6 @@
 Source: ice-kernel-dkms
+Section: mlit/kernel
+Priority: optional
 Maintainer: "University of Michigan Library IT" <lit-noreply@umich.edu>
 Build-Depends: debhelper (>= 10), dkms
 
