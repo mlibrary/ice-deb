@@ -4,3 +4,6 @@ include /usr/share/dpkg/pkg-info.mk
 
 %:
 	dh $@ --with dkms
+
+override_dh_install:
+	dh_install src/* usr/src/ice-$(DEB_VERSION_UPSTREAM)/
