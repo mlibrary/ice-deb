@@ -4,3 +4,4 @@ ice_*
 ice-kernel-*
 **/*debhelper*
 build/src/
+**/*.swp
