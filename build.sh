@@ -29,6 +29,7 @@ cd ..
 if [ -n "$GITHUB_ENV" ]; then
   echo DEB=$DEB >> "$GITHUB_ENV"
   echo CHANGES=$CHANGES >> "$GITHUB_ENV"
+  echo MODVERSION=$VER >> "$GITHUB_ENV"
 fi
 
 sha256sum $DEB

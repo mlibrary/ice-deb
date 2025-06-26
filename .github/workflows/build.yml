@@ -25,3 +25,18 @@ jobs:
       with:
         name: "${{ env.DEB }}"
         path: "${{ env.DEB }}"
+    - name: upload .dsc
+      uses: actions/upload-artifact@v4
+      with:
+        name: "ice-kernel-dkms_${{ env.MODVERSION }}.dsc"
+        path: "ice-kernel-dkms_${{ env.MODVERSION }}.dsc"
+    - name: upload source
+      uses: actions/upload-artifact@v4
+      with:
+        name: "ice-kernel-dkms_${{ env.MODVERSION }}.tar.xz"
+        path: "ice-kernel-dkms_${{ env.MODVERSION }}.tar.xz"
+    - name: upload .buildinfo
+      uses: actions/upload-artifact@v4
+      with:
+        name: "ice-kernel-dkms_${{ env.MODVERSION }}_amd64.buildinfo"
+        path: "ice-kernel-dkms_${{ env.MODVERSION }}_amd64.buildinfo"
