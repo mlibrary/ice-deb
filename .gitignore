@@ -1,5 +1,6 @@
 build/*.tar.gz
 build/*.deb
+build/debian/files
 ice_*
 ice-kernel-*
 **/*debhelper*

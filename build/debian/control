@@ -5,6 +5,6 @@ Maintainer: "University of Michigan Library IT" <lit-noreply@umich.edu>
 Build-Depends: debhelper (>= 10), dkms
 
 Package: ice-kernel-dkms
-Architecture: all
+Architecture: amd64
 Depends: ${misc:Depends}
 Description: Intel Ethernet 800 Series driver
