@@ -15,11 +15,21 @@ REMAKE_INITRD="YES"
 MAKE[0]="cd /usr/src/ice-${VER}/src; make -j"
 EOF
 
-rm ice-kernel-dkms*
-cd build/
-rm -rf *.tar.gz src/
+rm -f ice-kernel-dkms*
+cd build/ || exit 1
+rm -rf -- *.tar.gz src/
 
 curl -OL https://github.com/intel/ethernet-linux-ice/releases/download/v${VER}/ice-${VER}.tar.gz
 tar xf ice-${VER}.tar.gz
 mv ice-${VER} src/
-dpkg-buildpackage -us -uc
+dpkg-buildpackage -us -uc || exit 1
+
+cd ..
+
+if [ -n "$GITHUB_ENV" ]; then
+  echo DEB=$DEB >> "$GITHUB_ENV"
+  echo CHANGES=$CHANGES >> "$GITHUB_ENV"
+fi
+
+sha256sum $DEB
+sha256sum $CHANGES
