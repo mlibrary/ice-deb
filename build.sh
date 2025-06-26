@@ -1,10 +1,25 @@
 #!/bin/sh
 
+VER=1.17.4
+DEB=ice-kernel-dkms_${VER}_amd64.deb
+CHANGES=ice-kernel-dkms_${VER}_amd64.changes
+
+cat > build/debian/dkms <<EOF
+PACKAGE_NAME="ice"
+PACKAGE_VERSION="${VER}"
+BUILT_MODULE_NAME[0]="\$PACKAGE_NAME"
+BUILT_MODULE_LOCATION[0]="src/"
+DEST_MODULE_LOCATION[0]="/kernel/drivers/net/ethernet/intel/ice/"
+AUTOINSTALL="YES"
+REMAKE_INITRD="YES"
+MAKE[0]="cd /usr/src/ice-${VER}/src; make -j"
+EOF
+
 rm ice-kernel-dkms*
 cd build/
 rm -rf *.tar.gz src/
 
-curl -OL https://github.com/intel/ethernet-linux-ice/releases/download/v1.17.4/ice-1.17.4.tar.gz
-tar xf ice-1.17.4.tar.gz
-mv ice-1.17.4 src/
+curl -OL https://github.com/intel/ethernet-linux-ice/releases/download/v${VER}/ice-${VER}.tar.gz
+tar xf ice-${VER}.tar.gz
+mv ice-${VER} src/
 dpkg-buildpackage -us -uc
