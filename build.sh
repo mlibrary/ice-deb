@@ -1,8 +1,8 @@
 #!/bin/sh
 
 VER=1.17.4
-DEB=ice-kernel-dkms_${VER}_amd64.deb
-CHANGES=ice-kernel-dkms_${VER}_amd64.changes
+DEB=ice-kernel-dkms_${VER}_all.deb
+CHANGES=ice-kernel-dkms_${VER}_all.changes
 
 cat > build/debian/dkms <<EOF
 PACKAGE_NAME="ice"
@@ -11,7 +11,6 @@ BUILT_MODULE_NAME[0]="\$PACKAGE_NAME"
 BUILT_MODULE_LOCATION[0]="src/"
 DEST_MODULE_LOCATION[0]="/kernel/drivers/net/ethernet/intel/ice/"
 AUTOINSTALL="YES"
-REMAKE_INITRD="YES"
 MAKE[0]="cd /usr/src/ice-${VER}/src; make -j"
 EOF
 
