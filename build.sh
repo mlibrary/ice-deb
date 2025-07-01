@@ -1,8 +1,9 @@
 #!/bin/sh
 
+BUILD=all
 VER=1.17.4
-DEB=ice-kernel-dkms_${VER}_all.deb
-CHANGES=ice-kernel-dkms_${VER}_all.changes
+DEB=ice-kernel-dkms_${VER}_${BUILD}.deb
+CHANGES=ice-kernel-dkms_${VER}_${BUILD}.changes
 
 cat > build/debian/dkms <<EOF
 PACKAGE_NAME="ice"
@@ -21,7 +22,7 @@ rm -rf -- *.tar.gz src/
 curl -OL https://github.com/intel/ethernet-linux-ice/releases/download/v${VER}/ice-${VER}.tar.gz
 tar xf ice-${VER}.tar.gz
 mv ice-${VER} src/
-dpkg-buildpackage -us -uc || exit 1
+dpkg-buildpackage -us -uc --build=${BUILD} || exit 1
 
 cd ..
 
