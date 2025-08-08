@@ -6,5 +6,5 @@ Build-Depends: debhelper (>= 10), dkms
 
 Package: ice-kernel-dkms
 Architecture: all
-Depends: ${misc:Depends}
+Depends: dkms, ${misc:Depends}
 Description: Intel Ethernet 800 Series driver
