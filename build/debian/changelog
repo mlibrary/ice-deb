@@ -2,6 +2,8 @@ ice-kernel-dkms (1.17.4) jammy; urgency=medium
 
   * Added dkms to the regular depends (this should let it rebuild on new
     kernel install?)
+  * Added BUILD_KERNEL to Make command (does not use default KERNELVERSION env
+    var)
 
  -- Anthony Thomas <antmoth@ae-bucknell>  Mon, 11 Aug 2025 12:08:02 -0400
 
