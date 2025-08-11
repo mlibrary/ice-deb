@@ -1,4 +1,4 @@
-ice-kernel-dkms (1.17.4ubuntu1) jammy; urgency=medium
+ice-kernel-dkms (1.17.4) jammy; urgency=medium
 
   * Added dkms to the regular depends (this should let it rebuild on new
     kernel install?)
