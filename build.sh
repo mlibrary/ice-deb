@@ -12,7 +12,7 @@ BUILT_MODULE_NAME[0]="\$PACKAGE_NAME"
 BUILT_MODULE_LOCATION[0]="src/"
 DEST_MODULE_LOCATION[0]="/kernel/drivers/net/ethernet/intel/ice/"
 AUTOINSTALL="YES"
-MAKE[0]="cd /usr/src/ice-${VER}/src; make -j BUILD_KERNEL=\${kernelver}"
+MAKE[0]="cd /usr/src/ice-${VER}/src; make -j BUILD_KERNEL=\${kernelver} KSRC=/usr/src/linux-headers-\${kernelver}"
 EOF
 
 rm -f ice-kernel-dkms*
