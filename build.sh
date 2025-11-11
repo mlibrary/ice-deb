@@ -1,7 +1,7 @@
 #!/bin/sh
 
 BUILD=all
-VER=1.17.4
+VER=2.3.14
 DEB=ice-kernel-dkms_${VER}_${BUILD}.deb
 CHANGES=ice-kernel-dkms_${VER}_${BUILD}.changes
 
