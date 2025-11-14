@@ -1,14 +1,10 @@
-ice-kernel-dkms (1.17.4) jammy; urgency=medium
+ice-kernel-dkms (2.3.14) jammy; urgency=medium
 
+  * Initial package
   * Added dkms to the regular depends (this should let it rebuild on new
     kernel install?)
   * Added BUILD_KERNEL to Make command (does not use default KERNELVERSION env
     var)
 
- -- Anthony Thomas <antmoth@ae-bucknell>  Mon, 11 Aug 2025 12:08:02 -0400
+ -- University of Michigan Library IT <lit-noreply@umich.edu>  Mon, 11 Aug 2025 12:08:02 -0400
 
-ice-kernel-dkms (1.17.4) jammy; urgency=medium
-
-  * Initial package.
-
- -- University of Michigan Library IT <lit-noreply@umich.edu>  Thu, 26 Jun 2025 11:00:00 -0400
